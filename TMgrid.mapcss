@@ -1,0 +1,61 @@
+/*
+From the Tasking Manager https://tasks.hotosm.org you can go to a project
+and "Download Tasks Grid" (button at the bottom) to get at geojson file
+which can then be loaded as a layer in JOSM. By default it shows
+the grid as unstylised grey boxes, but we can make that more useful.
+
+Activate this MapCSS config to have it colour the task squares based on
+their taskStatus, so mapped and validated tasks get their blue and green
+colours (familiar from the Tasking Manager map)
+
+Some notes on using this:
+
+This taskStatus information is correct as of the moment you download
+the tasks grid, but will go out of date as more squares get mapped and
+validated. So you'll have to delete and re-download the grid geojson file
+to get an update.
+
+Be careful with the geojson layer. If you download data with JOSM it
+will merge that map data onto your geojson layer if it is active
+(not what you want!) Create a new layer for the OSM data download.
+
+(These gotchas points to an idea for smarter JOSM plugin!).
+
+Credits:
+
+Harry Wood made this MapCSS, but totally ripping the idea off somebody
+who demo'd the exact same idea at a missing maps london event. So all
+credit to him (whatever his name was)
+*/
+
+meta {
+    title: "Task Manager Grid";
+    icon: "icons/hot_small.png";
+    description: "Stylise the downloaded grid geojson from the Tasking Manager";
+    version: "0.0.1";
+    author: "Harry Wood";
+    link: "https://raw.githubusercontent.com/harry-wood/TMgrid_mapcss/main/TMgrid.mapcss";
+}
+
+area[taskStatus=VALIDATED] {
+    color: #40ac8c;
+    fill-color: #40ac8c;
+    fill-opacity: 0.5;
+}
+
+area[taskStatus=MAPPED],
+area[taskStatus=LOCKED_FOR_VALIDATION] {
+    color: #ade6ef;
+    fill-color: #ade6ef;
+    fill-opacity: 0.5;
+}
+
+area[taskStatus=READY] {
+    fill-color: #999999;
+    fill-opacity: 0.2;
+}
+
+area[taskStatus=INVALIDATED] {
+    fill-color: #fceca4;
+    fill-opacity: 0.5;
+}
