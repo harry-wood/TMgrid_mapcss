@@ -19,13 +19,14 @@ Be careful with the geojson layer. If you download data with JOSM it
 will merge that map data onto your geojson layer if it is active
 (not what you want!) Create a new layer for the OSM data download.
 
-(These gotchas points to an idea for smarter JOSM plugin!).
+(These gotchas point to an idea for a smarter JOSM plugin!).
 
 Credits:
 
-Harry Wood made this MapCSS, but totally ripping the idea off somebody
-who demo'd the exact same idea at a missing maps london event. So all
-credit to him (whatever his name was)
+Harry Wood made this MapCSS, but...
+All credit to Kenneth Fyfe who demo'd the exact same idea at a missing
+maps London event. Turns out he has also shared his MapCSS here:
+https://gitlab.com/peculiar-theater/mapcss/-/blob/main/tm-taskgrid/tm-taskgrid.mapcss
 */
 
 meta {
@@ -34,7 +35,7 @@ meta {
     description: "Stylise the downloaded grid geojson from the Tasking Manager";
     version: "0.0.1";
     author: "Harry Wood";
-    link: "https://raw.githubusercontent.com/harry-wood/TMgrid_mapcss/main/TMgrid.mapcss";
+    link: "https://github.com/...";
 }
 
 area[taskStatus=VALIDATED] {
