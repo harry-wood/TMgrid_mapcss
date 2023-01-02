@@ -1,6 +1,6 @@
 /*
 From the Tasking Manager https://tasks.hotosm.org you can go to a project
-and "Download Tasks Grid" (button at the bottom) to get at geojson file
+and "Download Tasks Grid" (button at the bottom) to get a geojson file
 which can then be loaded as a layer in JOSM. By default it shows
 the grid as unstylised grey boxes, but we can make that more useful.
 
